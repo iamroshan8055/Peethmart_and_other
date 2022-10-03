@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    /* ---------------- checkbox toggle start ---------------- */
+    #check_toggle_black:checked ~ #wrapper{
+        background-color: black;
+        color: white;
+    }
+    /* ---------------- checkbox toggle end ---------------- */
+
+    /* ---------------- radio toggle start ---------------- */
+    #radio-toggle_white:checked ~ #wrapper,
+    #radio-toggle_white:checked ~ tr:nth-of-type(even),
+    #radio-toggle_white:checked ~ th{
+        background-color: white;
+        color: black;
+    }
+
+    #radio-toggle_black:checked ~ #wrapper{
+        background-color: black;
+        color: white;
+    }
+    /* ---------------- radio toggle end ---------------- */
+
+    /* ---------------- table css start ---------------- */
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-bottom: 50px; */
+    }
+
+    tbody .tbl_imgs{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    /* Zebra striping */
+    tbody tr:hover{
+        opacity: 90%;
+    }
+
+    tbody tr td{
+        align-items: center;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    td, th {
+        padding: 6px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+    /* ---------------- table css end ---------------- */
+    </style>
+
+</head>
+<body>
+    
+    <input type="checkbox" id="check_toggle_black">
+    <input type="radio" name="color" id="radio-toggle_white"> <label for="radio-toggle_white"></label>
+    <input type="radio" name="color" id="radio-toggle_black"> <label for="radio-toggle_black"></label>
+
+    <!-- <input type="radio" name="color" id="radio-toggle_white"> <label for="radio-toggle_white">White BG</label>
+    <input type="radio" name="color" id="radio-toggle_black"> <label for="radio-toggle_black">Black BG</label> -->
+
+    <div id="wrapper">
+        <h1>Hello World!</h1>
+
+        <div class="main-content">
+            <header>
+                <div class="search-wrapper">
+                    <span class="ti-search"></span>
+                    <input type="search" placeholder="Search" name="" id="">
+                </div>
+    
+                <div class="social-icons">
+                    <span class="ti-bell"></span>
+                    <span class="ti-comment"></span>
+                    <div></div>
+                </div>
+            </header>
+    
+            <main>
+    
+                <h2>Products</h2>
+                <table class="table table-striped table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">sku</th>
+                        <th scope="col">Created by</th>
+                        <th scope="col">Updated by</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="prdct-tbl">
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="images/image_1.jpg" target="_blank"><img src="images/image_1.jpg" class="prdct_imgs" alt="image_1"></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="prdct-tbl">
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td><a href="images/image_2.jpg" target="_blank"><img src="images/image_2.jpg" class="prdct_imgs" alt="image_2"></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr class="prdct-tbl">
+                        <th scope="row">3</th>
+                        <td><a href="images/image_4.jpg" target="_blank"><img src="images/image_4.jpg" class="prdct_imgs" alt="image_4"></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+    
+            </main>
+    
+        </div>
+    
+
+    </div>
+
+</body>
+</html>

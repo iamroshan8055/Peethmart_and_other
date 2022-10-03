@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome CDN --> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css" integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css" integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/>
+    <script src="https://use.fontawesome.com/your-embed-code.js"></script> <!-- TODO: Place your Font Awesome embed code  -->
+
+
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #091822;
+        }
+        .container_1, .container_2, .container_3 {
+            display: flex;
+            flex-direction: row;
+        }
+        .newtrydiv {
+            margin-left: 200px;
+            margin-top: 100px;
+            border-radius: 50%;
+            background-color: #091822;
+            box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 1px 1px 12px -5px rgba(192,192,192,0.20) inset, -1px -1px 12px 2px rgba(2,6,8,0.20) inset;
+            -webkit-box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 1px 1px 12px -5px rgba(192,192,192,0.20) inset, -1px -1px 12px 2px rgba(2,6,8,0.20) inset;
+            -moz-box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 1px 1px 12px -5px rgba(192,192,192,0.20) inset, -1px -1px 12px 2px rgba(2,6,8,0.20) inset;
+        }
+        .outerdiv {
+            margin-left: 200px;
+            margin-top: 100px;
+            border-radius: 50%;
+            background-color: #091822;
+            box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 1px 1px 12px -5px rgba(192,192,192,0.20) inset, -1px -1px 12px 2px rgba(2,6,8,0.20) inset;
+            -webkit-box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 1px 1px 12px -5px rgba(192,192,192,0.20) inset, -1px -1px 12px 2px rgba(2,6,8,0.20) inset;
+            -moz-box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 1px 1px 12px -5px rgba(192,192,192,0.20) inset, -1px -1px 12px 2px rgba(2,6,8,0.20) inset;
+        }
+        .innerdiv{
+            margin-left: 200px;
+            margin-top: 100px;
+            border-radius: 50%;
+            background-color: #091822;
+            box-shadow: 6px 6px 8px 2px rgba(2,6,8,0.60) inset, -6px -6px 8px -2px rgba(192,192,192,0.20) inset;
+            -webkit-box-shadow: 6px 6px 8px 2px rgba(2,6,8,0.60) inset, -6px -6px 8px -2px rgba(192,192,192,0.20) inset;
+            -moz-box-shadow: 6px 6px 8px 2px rgba(2,6,8,0.60) inset, -6px -6px 8px -2px rgba(192,192,192,0.20) inset;
+        }
+        .outerdiv:hover, .innerdiv:hover, .newtrydiv:hover {
+            margin-left: 200px;
+            margin-top: 100px;
+            border-radius: 50%;
+            background-color: #091822;
+            box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 0px 0px 5px 2px rgba(6,17,24,0.76) inset, 6px 6px 25px 2px rgba(2,6,8,0.76) inset, -8px -8px 25px -10px rgba(192,192,192,0.30) inset;
+            -webkit-box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 0px 0px 5px 2px rgba(6,17,24,0.76) inset, 6px 6px 25px 2px rgba(2,6,8,0.76) inset, -8px -8px 25px -10px rgba(192,192,192,0.30) inset;
+            -moz-box-shadow: 6px 6px 12px 2px rgba(2,6,8,0.76), -5px -5px 12px -2px rgba(192,192,192,0.30), 0px 0px 5px 2px rgba(6,17,24,0.76) inset, 6px 6px 25px 2px rgba(2,6,8,0.76) inset, -8px -8px 25px -10px rgba(192,192,192,0.30) inset;
+        }
+        .cstm_check, .cstm_check_2 {
+            margin-left: 30px;
+            margin-top: 30px;
+            font-size: 2.5em;
+            color: #808080;
+        }
+        .cstm_cross, .cstm_cross_2 {
+            margin-left: 35px;
+            margin-top: 30px;
+            font-size: 2.8em;
+            color: #808080;
+        }
+        .cstm_circle, .cstm_circle_2 {
+            margin-left: 28px;
+            margin-top: 30px;
+            font-size: 2.8em;
+            color: #808080;
+        }
+        .cstm_check:hover, .cstm_cross:hover, .cstm_circle:hover {
+            color: #01fdf5;
+            text-shadow:
+                0 0 5px rgba(1, 253, 245, 0.5),
+                0 0 15px rgba(1, 253, 245, 0.5),
+                0 0 25px rgba(1, 253, 245, 0.5);
+        }
+        .cstm_check_2:hover, .cstm_cross_2:hover, .cstm_circle_2:hover {
+            color: #fd0101;
+            text-shadow:
+                0 0 5px rgba(253, 1, 1, 0.5),
+                0 0 15px rgba(253, 1, 1, 0.5),
+                0 0 25px rgba(253, 1, 1, 0.5);
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="container_1">
+        <div class="outerdiv" style="width:100px; height:100px"></div>
+        <div class="innerdiv" style="width:100px; height:100px"></div>
+        <div class="newtrydiv" style="width:100px; height:100px"></div>
+    </div>
+
+    <div class="container_2">
+        <div class="outerdiv" style="width:100px; height:100px"><i class="fas fa-check cstm_check"></i></div>
+        <div class="innerdiv" style="width:100px; height:100px"><i class="fas fa-times cstm_cross"></i></div>
+        <div class="newtrydiv" style="width:100px; height:100px"><i class="fad fa-heart-circle cstm_circle"></i></div>
+    </div>
+
+    <div class="container_3">
+        <div class="outerdiv" style="width:100px; height:100px"><i class="fas fa-check cstm_check_2"></i></div>
+        <div class="innerdiv" style="width:100px; height:100px"><i class="fas fa-times cstm_cross_2"></i></div>
+        <div class="newtrydiv" style="width:100px; height:100px"><i class="fad fa-heart-circle cstm_circle_2"></i></div>
+    </div>
+
+</body>
+</html>

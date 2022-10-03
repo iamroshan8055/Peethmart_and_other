@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+    <body>
+
+        <p>Click the button to demonstrate the prompt box.</p>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p id="demo"></p>
+
+    </body>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function myFunction() {
+            let result = prompt("Are you sure?");
+            if (3306==result){
+                swal({title: "Gotcha!",
+                    text: "Verified Successfully!",
+                    icon: "success",
+                    button: "OK"}).then(function() {
+                    // Redirect the user
+                    window.location.href = "https://www.youtube.com/";
+                    console.log('The Ok Button was clicked.');
+                    });
+            }
+            else{
+                swal ("Oops","Something went wrong!","error");
+            }
+        }
+    </script>
+
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="color-scheme" content="dark light"> -->
+
+    <title>Index Page</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/501ac1e256.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- SweetAlert2 -->
+    <!-- Include the Borderless theme -->
+    <!-- <link rel="stylesheet" href="@sweetalert2/theme-borderless/borderless.css"> -->
+    <!-- <script src="sweetalert2/dist/sweetalert2.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill9/dist/polyfill.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    
+
+    <style>
+
+        .switch {
+            position: relative;
+            display: block;
+            /* vertical-align: top; */
+            width: 100px;
+            height: 30px;
+            padding: 3px;
+            margin: 0 10px 10px 0;
+            background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+            background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+            border-radius: 18px;
+            box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            box-sizing:content-box;
+        }
+        .switch-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            box-sizing:content-box;
+        }
+        .switch-label {
+            position: relative;
+            display: block;
+            height: inherit;
+            font-size: 10px;
+            text-transform: uppercase;
+            background: #eceeef;
+            border-radius: inherit;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+            box-sizing:content-box;
+        }
+        .switch-label:before, .switch-label:after {
+            position: absolute;
+            top: 50%;
+            margin-top: -.5em;
+            line-height: 1;
+            -webkit-transition: inherit;
+            -moz-transition: inherit;
+            -o-transition: inherit;
+            transition: inherit;
+            box-sizing:content-box;
+        }
+        .switch-label:before {
+            content: attr(data-off);
+            right: 11px;
+            color: #FFFFFF;
+            text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+        }
+        .switch-label:after {
+            content: attr(data-on);
+            left: 11px;
+            color: #aaaaaa;
+            text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+        }
+        .switch-input:checked ~ .switch-label {
+            background: #E1B42B;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+        .switch-input:checked ~ .switch-label:before {
+            opacity: 0;
+        }
+        .switch-input:checked ~ .switch-label:after {
+            opacity: 1;
+        }
+        .switch-handle {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+            background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+            border-radius: 100%;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        .switch-handle:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -6px 0 0 -6px;
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+            background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+            border-radius: 6px;
+            box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+        }
+        .switch-input:checked ~ .switch-handle {
+            left: 74px;
+            box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Transition
+        ========================== */
+        .switch-label, .switch-handle {
+            transition: All 0.3s ease;
+            -webkit-transition: All 0.3s ease;
+            -moz-transition: All 0.3s ease;
+            -o-transition: All 0.3s ease;
+        }
+
+        .switch-left-right .switch-label {
+            overflow: hidden;
+        }
+        .switch-left-right .switch-label:before, .switch-left-right .switch-label:after {
+            width: 20px;
+            height: 20px;
+            top: 4px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 11px 0 0 0;
+            text-indent: -12px;
+            border-radius: 20px;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        .switch-left-right .switch-label:before {
+            background: #2a2f33;
+            text-align: left;
+            padding-left: 80px;
+        }
+        .switch-left-right .switch-label:after {
+            text-align: left;
+            text-indent: 9px;
+            background: #eceeef;  /* #ff7f50 */
+            left: -100px;
+            opacity: 1;
+            width: 100%;
+        }
+        .switch-left-right .switch-input:checked ~ .switch-label:before {
+            opacity: 1;
+            left: 100px;
+        }
+        .switch-left-right .switch-input:checked ~ .switch-label:after {
+            left: 0;
+        }
+        .switch-left-right .switch-input:checked ~ .switch-label {
+            background: inherit;
+        }
+
+        /* body{
+            background-color: #2a2f33;
+            color: white;
+        } */
+
+        /* .container{
+            position: absolute;
+            top: 5%;
+            left: 42%;
+            transform: translate(-50%,-50%);
+        }
+        .toggle-btn{
+            width: 80px;
+            height: 40px;
+            background: gray;
+            border-radius: 30px;
+            padding: 2.25px;
+            transition: all 300ms ease-in-out;
+            
+        }
+        .toggle-btn > .inner-circle{
+            height: 35px;
+            width: 35px;
+            background: #fff;
+            border-radius: 50%;
+            transition: all 300ms ease-in-out;
+        }
+        .toggle-btn.active{
+            background: #00acee;
+        }
+        .toggle-btn.active > .inner-circle{
+            margin-left: 40px;
+        } */
+
+        .b:hover{
+            color: white;
+        }
+        .img_r{
+            border-radius: 10%;
+        }
+        .img_r:hover{
+            opacity: 70%;
+            transition: 1.0s;
+        }
+        .img_r:active{
+            opacity: 20%;
+            transition: 0s;
+        }
+
+
+        .greeting {
+            color: black;
+            animation-name: Greet;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes Greet {
+            0%   {color: red;}
+            20%  {color: yellow;}
+            40%  {color: gold;}
+            60%  {color: pink;}
+            80%  {color: purple;}
+            95%  {color: brown;}
+            100% {color: red;}
+        }
+        
+        /* .greeting {
+        position: relative;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-size: 2em;
+        letter-spacing: 4px;
+        overflow: hidden;
+        background: linear-gradient(90deg, #000, #fff, #000);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: animate 3s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        }
+
+        @keyframes animate {
+        0% {
+            background-position: -500%;
+        }
+        100% {
+            background-position: 500%;
+        }
+        } */
+
+        
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("span").click(function(){
+
+                if ($(this).attr("data-on")){
+                    $('body').css({'background-color':'#2a2f33','color':'white'});
+                    $('.searchby').css({'background-color':'#2a2f33','color':'white'});
+                    $('.table-light').css('color','black');
+                    $('.table-dark').css('color','white');
+                }else if ($(this).attr("data-off")){
+                    $('body').css({'background-color':'white','color':'#2a2f33'});
+                    $('.searchby').css({'background-color':'white','color':'#2a2f33'});
+                    $('.table-light').css('color','black');
+                    $('.table-dark').css('color','white');
+                }else{
+                    $('body').css({'background-color':'white','color':'#2a2f33'});
+                    $('.searchby').css({'background-color':'white','color':'#2a2f33'});
+                    $('.table-light').css('color','black');
+                    $('.table-dark').css('color','white');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        function dark(elem){
+
+                if (elem.className=="table table-light table-hover"){
+                    elem.className="table table-dark table-hover";
+                    $('.table-dark').css('color','white');
+                } 
+                else if (elem.className=="table table-dark table-hover"){
+                    elem.className="table table-light table-hover";
+                    $('.table-light').css('color','black');
+                } 
+                else {
+                    elem.className="table table-light table-hover";
+                    $('.table-light').css('color','black');
+                }
+        }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+        <!-- <div class="container">
+            <div class="toggle-btn" onclick="this.classList.toggle('active')">
+                <div class="inner-circle">
+                </div>
+            </div>
+        </div> -->
+        
+        <label class="switch switch-left-right">
+            <input class="switch-input" type="checkbox" />
+            <span class="switch-label togg" data-on="Light" data-off="Dark"></span> 
+            <span class="switch-handle"></span> 
+        </label>
+
+        <h1 align="center" class="greeting" id="demo"></h1>
+        
+        <!-- <small>{{all_users}}
+        {% for user in all_users %}
+        {{user.pk}}
+        {% endfor %}</small> -->
+
+        <h1>UserName : {{u.UserName}}</h1>
+        <h1>Email ID : {{request.session.email}}</h1>
+
+        <!-- {% for l in likes %}
+            <p>
+                <b>{{l}}</b>
+            </p>
+        {% endfor %} -->
+
+        
+		<!-- <input type="text" name="name" class="form-control searchby" id="myInput" placeholder="Search.."> -->
+        <!-- <form class="form-inline">
+            <input class="form-control mr-sm-2 searchby" type="text" id="myInput" placeholder="Search.." aria-label="Search"> 
+        </form>		 -->
+
+        
+
+        <table align="right">
+            <tr>
+                <th>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2 searchby" type="text" id="myInput" placeholder="Search.." aria-label="Search"> 
+                    </form>	
+                </th>
+                <th>
+                    <form action="{% url 'youlikedpage' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="uliked_id" value="{{request.session.id}}">
+                        <button type="submit" class="b btn btn-outline-primary"><i class="far fa-thumbs-up"></i> Liked Info </button>
+                    </form>
+                </th>
+
+                <th>
+                    <form action="{% url 'myprofilepage' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="myprof_id" value="{{u.pk}}">
+                        <button type="submit" class="b btn btn-success"><i class="fas fa-user"></i> My Profile </button>
+                    </form>
+                </th>
+
+                <th>
+                <a class="b btn btn-warning" href="{% url 'signoutpage' %}"><i class="fas fa-sign-out-alt"></i> Sign Out </a>
+                </th>
+            </tr>
+        </table>
+        
+        <table onclick="dark(this)" class="table table-dark table-hover">
+            
+            <thead>
+                <tr align="center">
+                    <th> ID </th>
+                    <th> Username </th>
+                    <th> Email ID </th>
+                    <th> Password </th>
+                    <th> Images </th>
+                    <th> Like </th>
+                    <th> Verify </th>
+                    <th> OTP </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody id="myTable">
+
+                {% for user in all_users %}
+                
+                <tr>
+                    <td><b> {{user.pk}} </b></td>
+                    <td> {{user.UserName}} </td>
+                    <td> {{user.EmailID}}</td>
+                    <td> {{user.Password}} </td>
+                    
+                    {% if user.Image %}
+                    <td align="center"><a href="{{MEDIA_URL}}{{user.Image.url}}" title="Image" target="_blank"><img src="{{MEDIA_URL}}{{user.Image.url}}" id="{{user.pk}}" class="img_r" height="150px" width="150px"></a></td>
+                    {% else %}
+                    <td align="center"> No Image </td>
+                    {% endif %}
+
+                    <td> <button type="submit" id="{{user.pk}}" class="likebutton b btn btn-primary"><i class="fas fa-thumbs-up"></i> Like <small id="demo{{user.pk}}"></small></button></td>
+                    
+                    <td align="center"><b> {{user.is_verified}} </b></td>
+                    <td align="center"> {{user.OTP}} </td>
+
+                    <td align="center">
+                        <form action="{% url 'editpage' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="edit_id" value="{{user.pk}}">
+                            <button type="submit" class="b btn btn-outline-primary"><i class="fas fa-pencil-alt"></i> Edit </button>
+                        </form>
+                    </td>
+                    <td align="center">
+                        <form action="{% url 'delete' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="del_id" value="{{user.pk}}">
+                            <button type="submit" class="b btn btn-outline-danger"><i class="fas fa-trash-alt"></i> Delete </button>
+                        </form>
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+    
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.likebutton').click(function(){
+            // alert("clicked!")
+            // alert($(this).attr("id"));
+            var user_id = $(this).attr("id");
+            var lnk = $(this);
+            $.ajax({
+                url : "{% url 'likeuserpage' %}",
+                type : "GET",
+                data : {'user_id':user_id},
+                success : function(res) {swal("Good Job!","Liked by "+res["len_user"]+" people","success");},
+                error : function(e) {swal("Oops!","You have already liked this user","warning");}
+            });
+            
+        });
+    });
+</script>
+
+{% for user in all_users %}
+<script>
+    var likes_var = "{{likes}}";  // [4, 1, 2, 3, 2, 6]
+    document.getElementById("demo{{user.pk}}").innerHTML = likes_var[("{{forloop.counter}}"*2)+("{{forloop.counter}}"-2)];
+    // document.getElementById("demo{{user.pk}}").innerHTML = likes_var[("{{forloop.counter}}"*2)+("{{forloop.counter}}"-2)];
+    
+    // document.getElementById("demo{{user.pk}}").innerHTML = likes_var["{{user.pk}}"+1];
+    // document.getElementById("demo{{l}}").innerHTML = "{{likes}}";
+</script>
+{% endfor %}
+
+<!-- {% for user in all_users %}
+<script>
+    $(document).ready(function(){
+        $("img").click(function(){
+
+            var user_id = $(this).attr("id");
+            var hour = "{{all_users.4.pk}}";
+            var ses = "{{request.session.id}}";
+            // window.alert(user_id);
+            // window.alert(hour);
+            // window.alert(ses);
+            // alert("{{user.pk}}")
+            if (user_id === "{{user.pk}}"){
+                alert("{{user.pk}}")
+                // alert("{{user.Image}}")
+                // alert("{{MEDIA_URL}}{{all_users.2.Image.url}}")
+                alert("{{forloop.counter}}"-1)
+                Swal.fire({
+                    imageUrl: "{{MEDIA_URL}}{{all_users.0.Image.url}}",
+                    imageHeight: 400,
+                    imageWidth: 400,
+                    imageAlt: 'No Image Found!'
+                });
+            } // else {
+            //     swal("Oops!","Image not found!","warning");
+            // }
+        });
+    });
+</script>
+{% endfor %} -->
+
+<!-- greeting javascript -->
+<script>
+    
+    var greeting;
+    var time = new Date().getHours();
+    if (time < 12) {
+    greeting = "Good Morning";
+    // $("body").css("background-color", "#2a2f33");
+    // $("body").css("color", "white");
+    } else if (time < 17) {
+    greeting = "Good Afternoon";
+    // $("body").css("background-color", "#2a2f33");
+    // $("body").css("color", "white");
+    } else if (time < 21) {
+    greeting = "Good Evening";
+    // $("body").css("background-color", "#2a2f33");
+    // $("body").css("color", "white");
+    } else {
+    greeting = "Good Night";
+    // $("body").css({"background-color":"#2a2f33","color":"white"});
+    }
+    document.getElementById("demo").innerHTML = greeting;
+    
+</script>
+
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        onOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+    Toast.fire({
+        icon: 'success',
+        title: 'Signed in successfully'
+    })
+</script>
+
+
+</html>

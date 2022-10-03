@@ -1,0 +1,241 @@
+* { 
+    box-sizing: border-box; 
+}
+
+/* ---------------------------------- Header Start --------------------------------------- */
+
+#fix{
+    position: fixed;
+}
+
+header {
+    background-color: #B10B2D;
+    color: white;
+    margin-bottom: 50px;
+    /* margin-bottom: 80px; */
+    padding-top: 25px;
+    height: 100px;
+}
+
+header a{
+    text-decoration: none;
+    color: white; 
+}
+
+nav{
+    display: inline-block;
+    transform: translateY(-150%);
+    padding-left: 850px;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+}
+
+nav ul{
+    display: flex;
+    flex-direction:row;
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.25em;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    padding:13px 17px;
+}
+
+nav .active_nav{
+    background-color: #850922;
+}
+
+h1 {
+    display: inline; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3em;
+    line-height: 2em;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* text-shadow: -1px 1px 2px black; */
+}
+
+h1:hover {
+    text-shadow: -2px 2px 2px black;
+    transition: 1s;
+}
+
+/* ---------------------------------- Header End --------------------------------------- */
+
+/* ---------------------------------- Main Start --------------------------------------- */
+
+main{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.recipe_imgs {
+    height: 30%;
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+/* -----------flx img------------ */
+
+.recipe_imgs:hover{
+    border-radius: 15px;
+    opacity: 85%;
+    transition: 1s;
+    box-shadow: -5px 5px 10px hsl(0, 0%, 60%); 
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 2em;
+    color: black;
+}
+
+.style_underscore {
+    /* margin: 20px 0px -2px; */
+    display: inline-block;
+    height: 3px;
+    width: 72px;
+    background-color: #B10B2D;
+    margin: 1px 0 7px;
+    line-height: 27px;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 1.1em;
+    color: Black;
+    text-align: justify;
+    hyphens: none;
+}
+
+/* ------------------------------ Contact Us End ---------------------------------------- */
+
+/* ---------------------------------- Main End --------------------------------------- */
+
+/* ---------------------------------- Footer Start --------------------------------------- */
+
+footer {
+    background-color: #B10B2D;
+    color: white;
+    height: 100px;
+    text-align: center;
+    padding: 4% 5% 7% 5%;
+    line-height: 1.5em;
+    margin-top: 80px;
+    margin-top: 50px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-shadow: -3px 3px 2px black;
+    transition: 1s;
+}
+
+/* ---------------------------------- Footer End --------------------------------------- */
+
+/* ----------------------------------- Media Query Start (600px) ----------------------------------- */
+
+@media screen and (max-width: 600px) {
+    header h1{
+        font-size: 2.7em;
+    }
+
+    footer {
+        height: 130px;
+    }
+
+    nav{
+        transform: none;
+        padding-left: 125px;
+        padding-right: 125px;
+        align-items: center;
+        text-align: center;
+        background-color: #B10B2D;
+        color: white;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    main{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+/* ----------------------------------- Media Query End (600px) ----------------------------------- */
+
+/* ----------------------------------- Media Query Start (1024px) ----------------------------------- */
+
+/* @media screen and (min-width: 1024px) {
+    nav ul{
+        display: flex;
+        flex-direction:row;
+    }
+} */
+
+/* ----------------------------------- Media Query End (1024px) ----------------------------------- */
+
+/* ------------------------------------ Responsive Table CSS Start --------------------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-bottom: 50px; */
+}
+
+tbody .tbl_imgs{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+    background: hsl(0, 0%, 90%);
+    color: black;
+}
+
+tr:nth-of-type(even) {
+    background: hsl(0, 0%, 100%);
+    color: black;
+}
+
+tbody tr:hover{
+    opacity: 90%;
+}
+
+tbody tr td{
+    align-items: center;
+}
+
+th {
+    background: hsl(0, 0%, 100%);
+    color: black;
+    font-weight: bold;
+}
+
+td, th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+
+/* ------------------------------------ Responsive Table CSS End --------------------------------------- */

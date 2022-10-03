@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
+#body1 {
+    background-color: black;
+    color: white;
+}
+
+#header1 {
+    position: fixed;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100px;
+}
+
+#main1 {
+    margin-top: 0px;
+}
+
+#nav1 a {
+    text-decoration: none;
+    /* color: black;
+    background-color: white; */
+}
+
+#nav1 a:hover {
+    color: white;
+    background-color: black;
+}
+
+#nav1 a:active, #nav1 a:focus, #nav1 a:link, #nav1 a:visited {
+    color: white;
+    background-color: black;
+}
+
+#nv_flx_1, #nv_flx_2, #nv_flx_3, #nv_flx_4, #nv_flx_5 {
+    margin: 5px;
+    padding: 20px 30px;
+    color: black;
+    background-color: white;
+}
+
+#nv_flx_1:hover, #nv_flx_2:hover, #nv_flx_3:hover, #nv_flx_4:hover, #nv_flx_5:hover {
+    color: white;
+    background-color: black;
+}
+
+#nav1 ul {
+    list-style-type: none;
+}
+
+#nav_div {
+    display: flex;
+    flex-direction: row;
+}
+
+#footer1 {
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 100px;
+}
+
+
+
+/* =================================== Main Div Partitions Start ===================================== */
+
+#spac1 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: aqua;
+}
+
+#spac2 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: beige;
+}
+
+#spac3 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: chartreuse;
+}
+
+#spac4 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: darkcyan;
+}
+
+#spac5 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: fuchsia;
+}
+
+#spac6 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: gray;
+}
+
+#spac7 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: honeydew;
+}
+
+#spac8 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: indigo;
+}
+
+#spac9 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: khaki;
+}
+
+#spac10 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: lightcoral;
+}
+
+#spac11 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: mediumseagreen;
+}
+
+#spac12 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: navy;
+}
+
+#spac13 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: orange;
+}
+
+#spac14 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: pink;
+}
+
+#spac15 {
+    height: 630px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rebeccapurple;
+}
+
+/* =================================== Main Div Partitions End ===================================== */
+
+
+
+

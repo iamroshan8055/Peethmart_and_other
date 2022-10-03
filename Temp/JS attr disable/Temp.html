@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+  What color do you prefer?<br>
+  <input type="radio" onclick="check_r()" name="colors" id="red">Red<br>
+  <input type="radio" onclick="check_b()" name="colors" id="blue">Blue
+</form>
+
+<input type="text" name="colors" class="inptclr" id="red_inpt" placeholder="Enter Value">
+<input type="text" name="colors" class="inptclr" id="blue_inpt" placeholder="Enter Value">
+
+<script>
+
+function check_r() {
+	var b = document.querySelector("#red_inpt");
+    var d = document.querySelector("#blue_inpt"); 
+    
+    b.setAttribute("disabled", "");
+    d.removeAttribute("disabled", "");
+}
+function check_b() {
+	var b = document.querySelector("#blue_inpt");
+    var d = document.querySelector("#red_inpt");
+    
+    b.setAttribute("disabled", "");
+    d.removeAttribute("disabled", "");
+}
+</script>
+
+</body>
+</html>

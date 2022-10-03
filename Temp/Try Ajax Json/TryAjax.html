@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', newfun)
+
+        function newfun(){
+            console.log("Hey, You are here!");
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('GET',"https://learnwebcode.github.io/json-example/animals-1.json",true);
+
+            xhr.onload = function(){
+                if (this.status >= 200 && this.status < 400){
+                    console.log(this.responseText)
+                    var ourData = JSON.parse(this.responseText);
+                    renderHTML(ourData);
+                } else {
+                    console.log("Some error occured")
+                }
+            }
+
+            xhr.send();
+        }
+
+        function renderHTML(infoData){
+            var infoContainer = document.getElementById("info");
+            var thed = document.getElementById("prhead");
+            var tbod = document.getElementById("prbody");
+            var jsonObj = [{a:10,b:20,c:30,d:50}, {a:10,b:20,c:30,d:50}];
+            for (var key in infoData[0]){
+                thed.insertAdjacentHTML("beforeend","<th>"+ key +"</th>");
+                // console.log("Key: " + key);
+            }
+            for (var i in infoData){
+                tbod.insertAdjacentHTML("beforeend","<tr><td>" + infoData[i].name + "</td><td>" + infoData[i].species + "</td><td>" + infoData[i].foods.likes + "</td><td>" + infoData[i].foods.dislikes + "</td></tr>");
+            }
+
+            // for (i = 0 ; i < infoData.length; i ++)
+            // console.log("Key : " + infoData[i].keys[infoData]); // not needed in code just for try
+            // infoContainer.insertAdjacentHTML("beforeend",infoData[i].name + "&nbsp;" + infoData[i].species + "&nbsp;" + infoData[i].foods.likes + "&nbsp;" + infoData[i].foods.dislikes + "<br>");
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <table border=1>
+        <thead>
+            <tr id="prhead">
+
+            </tr>
+        </thead>
+
+        <tbody id="prbody">
+
+        </tbody>
+    </table>
+
+
+    <div id="info"></div>
+
+</body>
+</html>

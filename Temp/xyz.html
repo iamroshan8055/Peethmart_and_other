@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+
+<body>
+
+    <!-- <form action="#" name="tmp" id="tmp" method="get"> -->
+
+        <select name="pcategory" id="pcategory" onchange="abc();">
+            <!-- <option value="" selected disabled>-- select Category --</option> -->
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+
+    <!-- </form> -->
+
+            <input type="text" name="prnttxt" id="prnttxt" readonly>
+            <div name="prnttxt" id="prnttxt"></div>
+            <label name="prnttxt" id="prnttxt"></label>
+
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- <script>
+    function xyz(){
+        document.getElementById("prnttxt").innerHTML = tmp.pcategory[tmp.pcategory.selectedIndex].text;
+    }
+</script> -->
+
+<script>
+    // $(function () {
+    //     $("$pcategory").change(function () {
+    //         var catval = $("#pcategory option:selected").text();
+    //         $("#prnttxt").val(catval);
+    //         // document.getElementById("prnttxt").innerHTML = catval;
+    //     });
+    // });
+
+    function abc(){
+        var lsd = document.getElementById("pcategory").value;
+        console.log(lsd)
+    }
+</script>
+
+</html>

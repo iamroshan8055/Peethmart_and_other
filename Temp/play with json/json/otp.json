@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "mmbr_typ": "Basic",
+            "price": "50",
+            "otp": "123456"
+        },
+        {
+            "mmbr_typ": "Standard",
+            "price": "100",
+            "otp": "654321"
+        },
+        {
+            "mmbr_typ": "Premium",
+            "price": "150",
+            "otp": "123123"
+        }
+    ]
+}

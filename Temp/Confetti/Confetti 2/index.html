@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="button" class="ready my-button" id="knapp">Click Here</button>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script src="script.js"></script>
+
+<script type="module">
+  import { confetti } from '../src/main.js';
+
+  function readFormValues() {
+    const angle = document.getElementById('angle').value;
+    const spread = document.getElementById('spread').value;
+    const startVelocity = document.getElementById('velocity').value;
+    const duration = parseFloat(document.getElementById('duration').value);
+    const dragFriction = parseFloat(document.getElementById('dragFriction').value);
+    const delay = parseFloat(document.getElementById('delay').value);
+    const elementCount = parseFloat(document.getElementById('elements').value);
+
+    return { angle, spread, startVelocity, duration, dragFriction,delay, elementCount };
+  }
+
+  function init() {
+    const initialValues = readFormValues();
+    const knapp = document.getElementById('knapp');
+    const root = document.getElementById('container');
+    knapp.addEventListener('click', (e) => {
+      const values = readFormValues();
+      // values.colors = ['#000','#333', '#666'];
+      confetti(root, values);
+      e.preventDefault();
+    });
+    confetti(root, initialValues);
+  }
+
+  init();
+</script>
+</html>

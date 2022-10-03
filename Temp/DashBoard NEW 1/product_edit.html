@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title title="Product Edit Page"> Product Edit Page </title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/AdminPro_edit.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Font Awesome CDN --> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css" integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css" integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous"/>
+    <script src="https://use.fontawesome.com/your-embed-code.js"></script> <!-- TODO: Place your Font Awesome embed code  -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+
+    <!-- Bootsrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <header>
+            <a href="index.html"><h1 title="Admin Panel">Admin Panel</h1></a>
+        </header>
+
+        <nav>
+            <div class="flex_container"></div>
+                <ul>
+                    <li><div id="flx_nav_1" class="active_nav"><a href="index.html">Back</a></div></li>
+                    <!-- <li><div id="flx_nav_2"><a href="recipe.html">Recipes</a></div></li>
+                    <li><div id="flx_nav_3"><a href="about_us.html">About Us</a></div></li>
+                    <li><div id="flx_nav_4"><a href="contact_us.html">Contact Us</a></div></li> -->
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            
+            <form action="#" method="POST" id="productedit" enctype ="multipart/form-data">
+        
+                <input type="hidden" name="edit_id" value="">
+        
+                <h2>Product Edit Page</h2>
+    
+                <div class="flx_1">
+                    <img src="images/Home-Made-Raviolilatest.jpg" title="Click the image to replace it" class='img r recipe_imgs' id="img">
+                </div>
+
+                <!-- <h4>No Image</h4> -->
+
+                <input style="display: none;" type="file" name="image" id="image">
+        
+
+                <div id="message"></div>
+
+                <table border="0">
+                    <tr>
+                        <th> ID: </th>
+                        <td><strong>1</strong></td>
+                    </tr>
+                    <tr>
+                        <th> Name: </th>
+                        <td><input type="text"  class="form-control"  name="username" id="pname" placeholder="Enter your name" required></td>
+                    </tr>
+                    <tr>
+                        <th> Category: </th>
+                        <td>
+                            <select class="form-select" id="pcategory" aria-label="Default select example" onchange="selct_cate();">
+                                <option selected disabled>-- Select Category --</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th> Price: </th>
+                        <td><input type="text"  class="form-control"  name="username" id="pprice" placeholder="Enter your price" required></td>
+                    </tr>
+                    <!-- <tr>
+                        <th> Description: </th>
+                        <td><textarea type="text"  class="form-control"  name="username" id="pdescrip" rows="3" cols="30" placeholder="Enter your description" required></textarea></td>
+                    </tr> -->
+                    <tr>
+                        <th> Stock: </th>
+                        <td><input type="text"  class="form-control"  name="username" id="pstock" placeholder="Enter your stock" required></td>
+                    </tr>
+                    <tr>
+                        <th> sku: </th>
+                        <td><input type="text"  class="form-control"  name="username" id="psku" placeholder="Enter your sku" required></td>
+                    </tr>
+                    <tr>
+                        <th> Created by: </th>
+                        <td><input type="text"  class="form-control"  name="username" id="" readonly></td>
+                    </tr>
+                    <tr>
+                        <th> Created at: </th>
+                        <td><input type="datetime-local"  class="form-control"  name="username" id="" readonly></td>
+                    </tr>
+                    <tr>
+                        <th> Updated by: </th>
+                        <td><input type="text"  class="form-control"  name="username" id="" readonly></td>
+                    </tr>
+                    <tr>
+                        <th> Updated at: </th>
+                        <td><input type="datetime-local"  class="form-control"  name="username" id="" readonly></td>
+                    </tr>
+
+                    <!-- <tr>
+                        <th> Password: </th>
+                        <td><input type="text"  class="form-control"  name="password" id="" placeholder="Enter your passowrd" required></td>
+                    </tr>
+                    <tr>
+                        <th> Image: </th>
+                        <td><br><div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                              <input type="file" name="image" class="custom-file-input image" value="{{user.Image}}" id="inputGroupFile01 openfile" aria-describedby="inputGroupFileAddon01">
+                              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div></td>
+                    </tr> -->
+                    
+                </table>
+                <button type="submit" class="btn btn-outline-success"><i class="far fa-save"></i> Save </button>
+                <button type="reset" class="btn btn-warning"> Reset </button>
+            </form>
+
+        </main>
+
+        <footer>
+            Contact Us : <a href="mailto:peethmart@gmail.com">peethmart@gmail.com</a><br>
+            Copyright &copy; 2021 Peethmart. All Rights Reserved. <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a>
+        </footer>
+
+    </div>
+
+</body>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("img").click(function(){
+            $("#image").click();
+        });
+        // $("h4").click(function(){
+        //     $("#image").click();
+        // });
+    });
+</script>
+
+<Script>
+
+
+/* ====================== Select Option Dropdown Start ====================== */
+$(document).ready(function() {
+    $(".message").remove();
+    const url = "http://127.0.0.1:9000/api/admin/category/";
+    $.get(url, function(res){
+        var myArray = res.data;
+        buildTable(myArray) /* buildTable Function call */
+    })
+    .fail(function(res){
+        $('#message').append("<center><span class='message' style='color:red'>"+ res.responseJSON.message +"</span></center>");
+    });
+    return false;
+});
+
+function buildTable(data){
+    var table = document.getElementById('pcategory')
+
+    table.lastChild.innerHTML = ''
+
+    for (var i = 0; i < data.length; i++){
+        var row = `<option value="${data[i].id}">${data[i].name}</option>`
+        table.innerHTML += row
+    }
+}
+/* ====================== Select Option Dropdown End ====================== */
+
+
+    function selct_cate(){
+        var pcat_1 = document.getElementById("pcategory").value;
+        console.log(pcat_1)
+        return pcat_1;
+    }
+
+    $(document).ready(function() {
+		$("#productedit").submit(function()
+		{
+            function selct_category(){
+                var pcat_2 = selct_cate();
+                console.log(pcat_2)
+            }
+
+            $(".message").remove();
+			const url = "http://127.0.0.1:9000/api/admin/product";
+			const data = {  "image" : $('#image').val(),
+                            "name" : $('#pname').val(),
+                            "category_id" : $('#pcategory option:selected').val(),
+							"price" : $('#pprice').val(),
+                            "stock" : $('#pstock').val(),
+                            "sku" : $('#psku').val(),
+						}
+			$.post(url, data, function(){
+				alert("SUCCESS");
+			})
+			  .fail(function(res){
+				$('#message').append("<center><span class='message' style='color:red'>"+ res.responseJSON.message +"</span></center>");
+			  });
+			return false;
+        });
+    });
+</Script>
+
+</html>
